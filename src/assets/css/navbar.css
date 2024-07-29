@@ -1,0 +1,48 @@
+.active{
+    background-color: #1d4ed8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /*  space evenly between items */
+    align-items: center; /* aligns items vertically in the center */
+    background-color: #0f172a;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0px; /* makes the navbar start from the left edge of the viewport */
+}
+
+/* title link */
+nav .title {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 1rem; /* adds margin around the title */
+}
+
+/* navigation list */
+nav ul {
+    display: flex;
+    /* set unordered list to use flexbox layout */
+}
+
+/* list items */
+nav ul li {
+    list-style: none;
+}
+
+/* navigation links */
+nav ul li .nav-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem; /* padding inside the link */
+    margin: 0 0.5rem; /* horizontal margin to space out the links */
+    border-radius: 0.5rem;
+}
+
+/*highlights link that are not active*/
+nav ul li .nav-link:not(.active):hover {
+    background-color:#172554 ;
+}

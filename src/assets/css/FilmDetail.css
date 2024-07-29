@@ -1,0 +1,21 @@
+/* FilmDetails.css */
+
+.film-details-container strong {
+    color: #333; /* Darker color for labels */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0; /* remove padding */
+}
+
+
+ul li a {
+    text-decoration: none; /* remove underline from links */
+    color: #007bff;
+    font-weight: bold; /* Make links bold */
+}
+
+ul li a:hover {
+    color: #0056b3;
+}

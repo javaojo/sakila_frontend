@@ -23,7 +23,6 @@ function getAllFilms(): Promise<Film[]> {
 }
 
 function getAllActors(): Promise<Actor[]> {
-
     return fetch(`${API_URL}/actors`).
 
     then(res => {

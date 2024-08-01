@@ -1,11 +1,14 @@
 
-import {Actor} from '../types';
-import {Link, useParams} from "react-router-dom";
+import {Actor} from '../../types.tsx';
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
-import {getActor} from "../api.tsx";
+import {deleteActor, getActor} from "../../api.tsx";
+import "../../assets/css/ActotDetails.css";
 
 
 function ActorDetails() {
+
+    const navigate = useNavigate();
 
 
     const { id } = useParams();
@@ -38,10 +41,34 @@ function ActorDetails() {
     }
 
 
+    async function handleDelete() {
+        const confirmed = window.confirm("Are you sure you want to delete this actor?");
+
+        // check if user alive and confirmation made then delete
+        if (confirmed && actor) {
+            try {
+                await deleteActor(actor.id);
+                navigate("/actors");
+            } catch (err) {
+                console.error("Failed to delete actor:", err);
+            }
+        }
+    }
+
     return (
-        <div>
-            <GetActorInfo actor={actor}/>
-            <GetFilmList films={actor.films}/>
+        <div className="actor-details">
+
+            <GetActorInfo actor={actor} />
+            <GetFilmList films={actor.films} />
+
+            <div className="actor-actions">
+                <button onClick={handleDelete}>Delete Actor</button>
+
+                <Link to={`/actors/${actor.id}/update`} className="update-link">
+                    <button>Update Actor</button>
+                </Link>
+
+            </div>
         </div>
     );
 }
@@ -70,17 +97,13 @@ function GetFilmList(props: {films: Actor['films']}) {
 
 
     return (
-        <ul>
+        <ul className="film-list">
             {films.map(film => (
-
-                <li key={film.id}>
-
+                <li key={film.id} className="film-item">
                     <Link to={`/films/${film.id}`}>
-                        {film.title}
+                        <strong>{film.title}</strong> ({film.releaseYear})
                     </Link>
-
                 </li>
-
             ))}
         </ul>
     );

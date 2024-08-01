@@ -1,4 +1,4 @@
-import ActorList from '../components/ActorList';
+import ActorList from '../components/ActorComponent/ActorList.tsx';
 
 export function Actors(){
 

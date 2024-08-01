@@ -1,8 +1,23 @@
-.App {
-    height: 100%;
-    width: 100%;
-    background-color: #fefefe;
-    padding-top: 70px;
 
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
+a {
+    text-decoration: none; /* remove underline from links */
+    color: black;
+}
+
+/* visited links do not change color */
+a:visited {
+    color:none; /
+}
+
+a:hover {
+    color: #007BFF; /*change color on hover */
+}

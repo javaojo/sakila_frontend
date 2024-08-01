@@ -82,5 +82,30 @@ async function postActor(actor: { firstName: string; lastName: string }) {
     return await response.json();
 }
 
-export { getAllActors,getActor,getAllFilms, getFilm, postActor };
+
+async function deleteActor(actorId: number): Promise<void> {
+    const response = await fetch(`${API_URL}/actors/${actorId}`, {
+        method: 'DELETE'
+    });
+    if (!response.ok) {
+        throw new Error('Failed to delete actor');
+    }
+}
+
+
+async function updateActor(actorId: number, actor: Partial<Actor>): Promise<Actor> {
+    const response = await fetch(`${API_URL}/actors/${actorId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(actor)
+    });
+    if (!response.ok) {
+        throw new Error('Failed to update actor');
+    }
+    return await response.json();
+}
+
+export { getAllActors,getActor,getAllFilms, getFilm, postActor, deleteActor,  updateActor };
 

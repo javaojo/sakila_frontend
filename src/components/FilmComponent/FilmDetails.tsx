@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getFilm } from '../api';
-import {Film} from "../types.tsx";
-import "../assets/css/FilmDetail.css";
+import { getFilm } from '../../api.tsx';
+import {Film} from "../../types.tsx";
+import "../../assets/css/FilmDetail.css";
 
 
 
@@ -31,7 +31,7 @@ function FilmDetails(){
     if (!film) return <p>Film not found</p>;
 
     return (
-        <div>
+        <div className="filmactorlist">
 
             <h2>{film.title || 'N/A'}</h2>
             <GetFilmInfo film={film}/>

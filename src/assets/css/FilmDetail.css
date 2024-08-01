@@ -1,7 +1,11 @@
 /* FilmDetails.css */
+.filmactorlist{
+    padding: 60px;
+}
+
 
 .film-details-container strong {
-    color: #333; /* Darker color for labels */
+    color: #333;
 }
 
 ul {
@@ -13,7 +17,7 @@ ul {
 ul li a {
     text-decoration: none; /* remove underline from links */
     color: #007bff;
-    font-weight: bold; /* Make links bold */
+    font-weight: bold;
 }
 
 ul li a:hover {

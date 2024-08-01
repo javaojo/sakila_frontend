@@ -1,6 +1,10 @@
+import {HomeContent} from '../components/HomeComponent/HomeContent'
+
 export function Home(){
     return(
         <>
+            <HomeContent/>
+
             <h1>Home</h1>
 
             <div>

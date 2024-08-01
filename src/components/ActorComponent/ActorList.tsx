@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Actor } from '../types';
-import { getAllActors } from '../api';
+import { Actor } from '../../types.tsx';
+import { getAllActors } from '../../api.tsx';
 import {Link} from "react-router-dom";
-import "../assets/css/ActorList.css"
+import "../../assets/css/ActorList.css"
 
 function ActorList() {
     const [actors, setActors] = useState<Actor[]>([]);
@@ -33,22 +33,25 @@ function ActorList() {
     }
 
     return (
-        <div className="actor-list">
+        <div className="actor-list-container">
             <h2>Actors</h2>
-            <div className="card-container">
+
+            <div className="actor-grid">
 
                 {actors.map(actor => (
 
-                    <div className="card" key={actor.id}>
+                    <Link to={`/actors/${actor.id}`} key={actor.id} className="actor-card-link">
 
-                        <Link to={`/actors/${actor.id}`}>
-                            <div className="card-content">
-                                <h3>{actor.firstName} {actor.lastName}</h3>
+                        <div className="actor-card" id={`actor-${actor.id}`}>
+                            <img src="https://via.placeholder.com/150"  className="actor-image"/>
+
+                            <div className="container">
+                                <h4 className="actor-title"><b>{actor.firstName} {actor.lastName}</b></h4>
                             </div>
-                        </Link>
 
-                    </div>
+                        </div>
 
+                    </Link>
                 ))}
             </div>
         </div>

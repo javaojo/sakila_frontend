@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { postActor } from '../api';
-import "../assets/css/ActorForm.css";
+import { postActor } from '../../api.tsx';
+import "../../assets/css/Form.css";
 
 function ActorForm() {
     const [firstName, setFirstName] = useState('');
@@ -38,28 +38,30 @@ function ActorForm() {
     }
 
     return (
-        <div>
-            <h2>Add a New Actor</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>First Name:</label>
-                    <input
-                        type="text"
-                        value={firstName} // user input value
-                        onChange={handleFirstNameChange}
-                    />
-                </div>
-                <div>
-                    <label>Last Name:</label>
-                    <input
-                        type="text"
-                        value={lastName} // user input value
-                        onChange={handleLastNameChange}
-                    />
-                </div>
-                <button type="submit">Add Actor</button>
-            </form>
-            <div className="message">{message ? <p>{message}</p> : null}</div>
+        <div className="form-container">
+            <div className="form">
+                <h2>Add a New Actor</h2>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>First Name:</label>
+                        <input
+                            type="text"
+                            value={firstName} // user input value
+                            onChange={handleFirstNameChange}
+                        />
+                    </div>
+                    <div>
+                        <label>Last Name:</label>
+                        <input
+                            type="text"
+                            value={lastName} // user input value
+                            onChange={handleLastNameChange}
+                        />
+                    </div>
+                    <button type="submit">Add Actor</button>
+                </form>
+                <div className="message">{message ? <p>{message}</p> : null}</div>
+            </div>
         </div>
     );
 }

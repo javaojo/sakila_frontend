@@ -1,0 +1,59 @@
+
+.carousel-slide {
+    display: flex;
+    height: 100%;
+}
+
+.carousel-container {
+    z-index: 1;
+    margin-top: 25px;
+
+}
+
+.carousel-image-container {
+    position: relative;
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.carousel-overlay h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.carousel-overlay p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.carousel-year {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.slick-arrow.slick-prev {
+    display: none !important;
+}
+.slick-arrow.slick-next {
+    display: none !important;
+}

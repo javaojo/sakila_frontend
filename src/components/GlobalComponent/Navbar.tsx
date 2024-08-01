@@ -1,6 +1,6 @@
 // import { Link,  Router, Routes } from "react-router-dom";
 
-import "../assets/css/navbar.css"
+import "../../assets/css/navbar.css"
 import {Link, NavLink} from "react-router-dom";
 
 

@@ -1,4 +1,4 @@
-import FilmList from '../components/FilmList';
+import FilmList from '../components/FilmComponent/FilmList.tsx';
 
 
 

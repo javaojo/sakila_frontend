@@ -11,28 +11,29 @@
     position: fixed;
     top: 0;
     left: 0px; /* makes the navbar start from the left edge of the viewport */
+    z-index: 10;
 }
 
-/* title link */
-nav .title {
-    color: white;
+
+.navbar .title {
+    color: white;!important;
     text-decoration: none;
     font-size: 1.5rem;
     margin: 1rem; /* adds margin around the title */
 }
 
-/* navigation list */
+
 nav ul {
     display: flex;
     /* set unordered list to use flexbox layout */
 }
 
-/* list items */
+
 nav ul li {
     list-style: none;
 }
 
-/* navigation links */
+
 nav ul li .nav-link {
     display: block;
     text-decoration: none;

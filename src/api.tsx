@@ -6,11 +6,8 @@ const BASE_URL = (import.meta.env.VITE_API_URL ?? "") + "/api"
 const API_URL = BASE_URL;
 
 function getAllFilms(): Promise<Film[]> {
-
     return fetch(`${API_URL}/films`).
-
     then(res => {
-
         if (!res.ok) {
             throw new Error('Network response was not ok');
         } else {
